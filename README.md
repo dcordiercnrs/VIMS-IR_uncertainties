@@ -1,5 +1,10 @@
 # Material for VIMS-IR uncertainties estimations
 
+## About
+The material available here is a supplementary material related to the paper 
+``Photometric Uncertainties of Cassini VIMS-IR Instrument'' by Cordier, D., Seignovert, B., Le Mouélic, S. and 
+Sotin, C.
+
 ## Requirements
 Basically, the programs, we make publicly available, require a recent `Python` version (3.x) and the very commonly used packages:
  - `Numpy`
