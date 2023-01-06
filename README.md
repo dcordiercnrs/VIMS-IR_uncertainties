@@ -42,7 +42,10 @@ all these packages may be installed using the `pip` with command lines similar t
    can generate his/her own `HF5` file.
    
 ## Tools
-    
- - `VIMS-IR_uncert_Part_ONE.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+The global analysis process is split into 2 steps:
+ 1. the random choice of 3x3 boxes in the cubes and the record of extracted data, stored in Pandas *DataFrames*, in
+    `HDF5` files. This step can be accomplished with the Python Jupyter notebook:
+    - `VIMS-IR_uncert_Part_ONE.ipynb`
 
- - `VIMS-IR_uncert_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+ 2. the data analysis strictly speaking, which can be done with the second Python Jupyter notebook:
+    - `VIMS-IR_uncert_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
