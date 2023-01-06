@@ -37,7 +37,9 @@ all these packages may be installed using the `pip` with command lines similar t
    form of 2 HDF5 files:
    - `stoDFrame_CubeData_NEW.hdf5` (48 KB) containing global features of employed cubes.
    - `stoDFrame_PavData_NEW.hdf5` (79 MB) containing the data of 3x3 pixels blocks picked-up in cubes.
-   this way, any colleague, can potentially reproduce exactly the work we have done.
+   this way, any colleague, can potentially reproduce exactly the work we have done. Each of these compressed file contains
+   a `Pandas` *DataFrame* which can be read and use *as it* in provided Jupyter notebooks. Of course, the interested reader
+   can generate his/her own `HF5` file.
    
 ## Tools
     
