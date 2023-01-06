@@ -5,9 +5,12 @@ Basically, the programs, we make publicly available, require a recent `Python` v
  - `Numpy`
  - `Matplotlib`
  - `Pandas`
+
 together with the VIMS data management tool:
  - `PyVIMS` 
  
+all these packages may be installed using the `pip` with command lines similar to `pip install pyvims`
+
 ## Data and tools
 
  - `VIMSuncert_cubes_list.csv`: `CSV` file containing the full list of the 149 high spatial resolution VIMS cubes analyzed.
