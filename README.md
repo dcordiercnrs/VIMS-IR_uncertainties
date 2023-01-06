@@ -50,6 +50,7 @@ The global analysis process is split into 2 steps:
     <center>
     <img src="fig/distri_map_boxes.png">
     </center>
+    
     For memory, the Huygens landing site has been marked with a red square, while Selk crater
     (planned to be explored by Dragonfly) is tagged with a yellow square. Titan surface mosaic a credit: NASA/JPL-Caltech/Univ. Arizona
     a https://photojournal.jpl.nasa.gov/catalog/PIA22770
