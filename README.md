@@ -47,13 +47,15 @@ The global analysis process is split into 2 steps:
     `HDF5` files. This step can be accomplished with the Python Jupyter notebook:
     - `VIMS-IR_uncert_Part_ONE.ipynb`
     
-    <br>An example of spatial distribution of 3x3 boxes is reported in the following map of Titan surface:
+    An example of spatial distribution of 3x3 boxes is reported in the following map of Titan surface, the colored
+    encoding represents the surface density of chosen boxes:
     <center>
     <img src="fig/distri_map_boxes.png">
     </center>
     
     For memory, the Huygens landing site has been marked with a red square, while Selk crater
-    (planned to be explored by Dragonfly) is tagged with a yellow square. Titan surface mosaic a credit: NASA/JPL-Caltech/Univ. Arizona
+    (planned to be explored by [Dragonfly](https://dragonfly.jhuapl.edu)) is tagged with a yellow square. 
+    Titan surface mosaic a credit: NASA/JPL-Caltech/Univ. Arizona
     a https://photojournal.jpl.nasa.gov/catalog/PIA22770
 
  2. the data analysis strictly speaking, which can be done with the second Python Jupyter notebook:
