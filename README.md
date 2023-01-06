@@ -48,4 +48,4 @@ The global analysis process is split into 2 steps:
     - `VIMS-IR_uncert_Part_ONE.ipynb`
 
  2. the data analysis strictly speaking, which can be done with the second Python Jupyter notebook:
-    - `VIMS-IR_uncert_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+    - `VIMS-IR_uncert_Part_TWO.ipynb`
