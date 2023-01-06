@@ -34,7 +34,7 @@ all these packages may be installed using the `pip` with command lines similar t
    mentioned `CSV` file, all these cubes (total size: 313MB) may be automatically downloaded from Nantes University
    repository (https://vims.univ-nantes.fr/) with the `PyVIMS` tool.
  - since the analysis relies basically on a Monte-Carlo algorithm, we provide precisely used in our study under the
-   form of 2 HDF5 files:
+   form of 2 HDF5 files available in the directory `ANALYSIS_HDF5/`:
    - `stoDFrame_CubeData_NEW.hdf5` (48 KB) containing global features of employed cubes.
    - `stoDFrame_PavData_NEW.hdf5` (79 MB) containing the data of 3x3 pixels blocks picked-up in cubes.
    this way, any colleague, can potentially reproduce exactly the work we have done. Each of these compressed file contains
