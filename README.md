@@ -24,8 +24,8 @@ all these packages may be installed using the `pip` with command lines similar t
    repository (https://vims.univ-nantes.fr/) with the `PyVIMS` tool.
  - since the analysis relies basically on a Monte-Carlo algorithm, we provide precisely used in our study under the
    form of 2 HDF5 files:
-   - `stoDFrame_CubeData_NEW.hdf5` (48 KB)
-   - `stoDFrame_PavData_NEW.hdf5` (79 MB)
+   - `stoDFrame_CubeData_NEW.hdf5` (48 KB) containing global features of employed cubes.
+   - `stoDFrame_PavData_NEW.hdf5` (79 MB) containing the data of 3x3 pixels blocks picked-up in cubes.
    this way, any colleague, can potentially reproduce exactly the work we have done.
    
 ## Tools
