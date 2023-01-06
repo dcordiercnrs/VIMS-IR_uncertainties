@@ -2,7 +2,7 @@
 
 ## About
 The material available here is a supplementary material related to the paper 
-``Photometric Uncertainties of Cassini VIMS-IR Instrument'' by Cordier, D., Seignovert, B., Le Mouélic, S. and 
+``*Photometric Uncertainties of Cassini VIMS-IR Instrument*'' by Cordier, D., Seignovert, B., Le Mouélic, S. and 
 Sotin, C.
 
 The main goal of this work is to estimate photometric uncertainties remaining in VIMS-IR cubes after calibration using
