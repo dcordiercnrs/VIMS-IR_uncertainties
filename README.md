@@ -46,12 +46,13 @@ The global analysis process is split into 2 steps:
  1. the random choice of 3x3 boxes in the cubes and the record of extracted data, stored in Pandas *DataFrames*, in
     `HDF5` files. This step can be accomplished with the Python Jupyter notebook:
     - `VIMS-IR_uncert_Part_ONE.ipynb`
-    An example of spatial distribution of 3x3 boxes is reported in the following map of Titan surface:
+    
+    <br>An example of spatial distribution of 3x3 boxes is reported in the following map of Titan surface:
     <center>
     <img src="fig/distri_map_boxes.png">
     </center>
     
-For memory, the Huygens landing site has been marked with a red square, while Selk crater
+    For memory, the Huygens landing site has been marked with a red square, while Selk crater
     (planned to be explored by Dragonfly) is tagged with a yellow square. Titan surface mosaic a credit: NASA/JPL-Caltech/Univ. Arizona
     a https://photojournal.jpl.nasa.gov/catalog/PIA22770
 
