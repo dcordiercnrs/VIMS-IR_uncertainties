@@ -43,6 +43,6 @@ all these packages may be installed using the `pip` with command lines similar t
    
 ## Tools
     
- - `VIMS-IR_uncertainties_analysis_Part_ONE.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+ - `VIMS-IR_uncert_Part_ONE.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
 
- - `VIMS-IR_uncertainties_analysis_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+ - `VIMS-IR_uncert_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
