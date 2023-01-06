@@ -5,6 +5,11 @@ The material available here is a supplementary material related to the paper
 ``Photometric Uncertainties of Cassini VIMS-IR Instrument'' by Cordier, D., Seignovert, B., Le Mouélic, S. and 
 Sotin, C.
 
+The main goal of this work is to estimate photometric uncertainties remaining in VIMS-IR cubes after calibration using
+USGS ISIS3 tool (https://isis.astrogeology.usgs.gov)
+
+<img src="scheme_VIMS_CUBE.png">
+
 ## Requirements
 Basically, the programs, we make publicly available, require a recent `Python` version (3.x) and the very commonly used packages:
  - `Numpy`
