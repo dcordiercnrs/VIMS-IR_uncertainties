@@ -6,11 +6,15 @@ The material available here is a supplementary material related to the paper
 Sotin, C.
 
 The main goal of this work is to estimate photometric uncertainties remaining in VIMS-IR cubes after calibration using
-USGS ISIS3 tool (https://isis.astrogeology.usgs.gov)
+USGS ISIS3 tool (https://isis.astrogeology.usgs.gov), the employed method relies on the definition of a collection of
+3x3 pixels picked-up in each considered cube as it is summarized in the following sketch:
 
 <center>
 <img src="scheme_VIMS_CUBE_SMALL.png">
 </center>
+
+within each individual "block" or "box", for a given spectral channel, the variability of photometric quantities is computed. 
+The mean relative variability gives an approximation of uncertainties.
 
 ## Requirements
 Basically, the programs, we make publicly available, require a recent `Python` version (3.x) and the very commonly used packages:
