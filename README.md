@@ -22,7 +22,12 @@ all these packages may be installed using the `pip` with command lines similar t
  - `VIMS_CALCUBES/`: the directory containing all the 149 calibrated cube involved in the study. Using the list in the 
    mentioned `CSV` file, all these cubes (total size: 313MB) may be automatically downloaded from Nantes University
    repository (https://vims.univ-nantes.fr/) with the `PyVIMS` tool.
- 
+ - since the analysis relies basically on a Monte-Carlo algorithm, we provide precisely used in our study under the
+   form of 2 HDF5 files:
+   - `stoDFrame_CubeData_NEW.hdf5` (48 KB)
+   - `stoDFrame_PavData_NEW.hdf5` (79 MB)
+   this way, any colleague, can potentially reproduce exactly the work we have done.
+   
 ## Tools
     
  - `VIMS-IR_uncertainties_analysis_Part_ONE.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
