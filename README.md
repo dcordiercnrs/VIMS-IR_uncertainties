@@ -16,9 +16,15 @@ together with the VIMS data management tool:
  
 all these packages may be installed using the `pip` with command lines similar to `pip install pyvims`
 
-## Data and tools
-
+## Data
  - `VIMSuncert_cubes_list.csv`: `CSV` file containing the full list of the 149 high spatial resolution VIMS cubes analyzed.
     These cubes have a spatial resolution better than 35km/pixel.
+ - `VIMS_CALCUBES/`: the directory containing all the 149 calibrated cube involved in the study. Using the list in the 
+   mentioned `CSV` file, all these cubes (total size: 313MB) may be automatically downloaded from Nantes University
+   repository (https://vims.univ-nantes.fr/) with the `PyVIMS` tool.
+ 
+## Tools
     
  - `VIMS-IR_uncertainties_analysis_Part_ONE.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
+
+ - `VIMS-IR_uncertainties_analysis_Part_TWO.ipynb`: the Jupyter notebook that extracts data from VIMS cubes.
