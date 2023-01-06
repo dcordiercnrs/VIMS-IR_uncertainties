@@ -10,7 +10,7 @@ USGS ISIS3 tool (https://isis.astrogeology.usgs.gov), the employed method relies
 3x3 pixels picked-up in each considered cube as it is summarized in the following sketch:
 
 <center>
-<img src="scheme_VIMS_CUBE_SMALL.png">
+<img src="fig/scheme_VIMS_CUBE_SMALL.png">
 </center>
 
 within each individual "block" or "box", for a given spectral channel, the variability of photometric quantities is computed. 
