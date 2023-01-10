@@ -75,13 +75,15 @@ The global analysis process is split into 2 steps:
     will be asked, this directory has to be available on your hard drive, even if it is empty. In this notebook, the user has
     to specify:
     - the name of the directory containing the cubes
-    - for processed cubes, the fraction of pixels that will be chosen as the "central pixel" of considered 3x3 boxes.
+    - for processed cubes, the fraction (0.10 is a reasonable value) of pixels that will be chosen as the "central pixel" of 
+      considered 3x3 boxes.
     - the names of the `HDF5` compressed files containing the data:
       - one with global features of cubes (exposure times, etc)
       - on with data of 3x3 boxes.
       
     As output, the user will get:
     - pictures of cube (at 2.03 microns) with chosen pixels identified by a red dot, these pictures are shown in the 
-      notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/` if `TEST/` is the name of the 
+      notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/`, if `TEST/` is the name of the 
       directory containing the cubes.
     - two `HDF5` compressed file, mentioned previously.
+ 4. use the second notebook `VIMS-IR_uncert_Part_TWO.ipynb`
