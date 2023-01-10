@@ -79,6 +79,7 @@ The global analysis process is split into 2 steps:
     - the names of the `HDF5` compressed files containing the data:
       - one with global features of cubes (exposure times, etc)
       - on with data of 3x3 boxes.
+      
     As output, the user will get:
     - pictures of cube (at 2.03 microns) with chosen pixels identified by a red dot, these pictures are shown in the 
       notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/` if `TEST/` is the name of the 
