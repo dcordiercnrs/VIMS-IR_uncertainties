@@ -1,7 +1,7 @@
 """
 First module: data extraction
-D. Cordier January 2023
-
+D. Cordier, CNRS, France, January 2023
+https://orcid.org/0000-0003-4515-6271 
 Licence: GPL 3
 """
 # -----------------------------------------------------------------------------------------------------------------------------------

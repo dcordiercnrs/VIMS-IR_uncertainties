@@ -1,6 +1,9 @@
 """
 Module d'estimation des incertitudes sur des cubes VIMS.
 Version du 6 octobre 2020.
+D. Cordier, CNRS, France
+https://orcid.org/0000-0003-4515-6271 
+Licence: GPL 3
 """
 # ------------------------------------------------------------------------------------
 import datetime  # Pour avoir la date et l'heure.

@@ -37,7 +37,10 @@ Basically, the programs, we make publicly available, require a recent `Python` v
 together with the VIMS data management tool:
  - `PyVIMS` 
  
-all these packages may be installed using the `pip` with command lines similar to `pip install pyvims`
+all these packages may be installed using the `pip` with command lines similar to `pip install pyvims`.
+
+In addition, the provided Python modules `VIMSU_1.py`, `VIMSU_2.py` and `VIMS_uncertainties.py` should be available in the current
+directory.
 
 ## Data
  - `VIMSuncert_cubes_list.csv`: `CSV` file containing the full list of the 149 high spatial resolution VIMS cubes analyzed.
@@ -91,6 +94,15 @@ The global analysis process is split into 2 steps:
     As output, the user will get:
     - pictures of cube (at 2.03 microns) with chosen pixels identified by a red dot, these pictures are shown in the 
       notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/`, if `TEST/` is the name of the 
-      directory containing the cubes.
+      directory containing the cubes. These plots, similar to that one:
+      <center>
+      <img src="fig/example_chosen_pixels_1757669180_1.png">
+      </center>
+      will be also shown in the notebook.
     - two `HDF5` compressed file, mentioned previously.
- 4. use the second notebook `VIMS-IR_uncert_Part_TWO.ipynb`, 
+ 4. use the second notebook `VIMS-IR_uncert_Part_TWO.ipynb`, this notebook is dedicated to data analysis, here an example
+    of that could be obtained with this tool:
+    <center>
+      <img src="fig/fig_DIsF_IsFaverage.png">
+      </center>
+    
