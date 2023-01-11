@@ -23,9 +23,16 @@ The mean relative variability gives an approximation of uncertainties.
 
 ## Requirements
 Basically, the programs, we make publicly available, require a recent `Python` version (3.x) and the very commonly used packages:
+ - `os`, `sys`
  - `Numpy`
  - `Matplotlib`
  - `Pandas`
+ - `time`
+ - `re`
+ - `random`
+ - `datetime`
+ - `scipy`
+ - `titan`
 
 together with the VIMS data management tool:
  - `PyVIMS` 
@@ -86,4 +93,4 @@ The global analysis process is split into 2 steps:
       notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/`, if `TEST/` is the name of the 
       directory containing the cubes.
     - two `HDF5` compressed file, mentioned previously.
- 4. use the second notebook `VIMS-IR_uncert_Part_TWO.ipynb`
+ 4. use the second notebook `VIMS-IR_uncert_Part_TWO.ipynb`, 
