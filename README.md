@@ -96,7 +96,7 @@ The global analysis process is split into 2 steps:
       notebook itself, a copy of each one are saved in the directory `TEST_Plot_Distrib/`, if `TEST/` is the name of the 
       directory containing the cubes. These plots, similar to that one:
       <center>
-      <img src="fig/example_chosen_pixels_1757669180_1.png">
+      <img src="fig/ex_chosen_pixels_1757669180_1.png">
       </center>
       will be also shown in the notebook.
     - two `HDF5` compressed file, mentioned previously.
