@@ -32,6 +32,21 @@ source venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
+Known issues:
+<details>
+<summary><b>Fix HDF5 install error on macOS</b></summary>
+
+On macOS you may need to install `hdf5` and `c-blosc` libraries manually before running `pip install`:
+```
+brew install hdf5 c-blosc
+export HDF5_DIR=/opt/homebrew/opt/hdf5
+export BLOSC_DIR=/opt/homebrew/opt/c-blosc
+python -m pip install -r requirements.txt
+```
+</details>
+
+---
+
 In addition, the provided Python modules `VIMSU_1.py`, `VIMSU_2.py` and `VIMS_uncertainties.py` should be available in the current directory.
 
 ## Data
