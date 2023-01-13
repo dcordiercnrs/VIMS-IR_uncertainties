@@ -22,12 +22,12 @@ class VIMS_u:
     """
     D. Cordier - January 2023.
     """
-    def __init__(self,cub_list_CSV,cubes_dir,frac):
+    def __init__(self, cub_list_CSV, cubes_dir, frac):
         # -------------------------------------------------------------------------------
         if os.path.isfile(cub_list_CSV):
             print (" > CSV file containing the list of cubes ---: ",  cub_list_CSV)
         else:
-            print (" > The file: \"",cub_list_CSV,"\" is not available in the current directory!")
+            print (" > The file: \"", cub_list_CSV,"\" is not available in the current directory!")
             print ("   We stop!")
             return
 
@@ -50,10 +50,10 @@ class VIMS_u:
         for i, cname in enumerate(self.clist):
             fname = "C"+cname+"_ir.cub"
             if not os.path.isfile(cubes_dir+"/"+fname):
-            #    print ("   - ",i, " : ", fname, " is present in '", cubes_dir ,"'")
+            #    print ("   - ", i, " : ", fname, " is present in '", cubes_dir ,"'")
             #else:
                 print ("   - This cube is note present, we download: ", fname)
-                cvims = VIMS(cname,root=cubes_dir)
+                cvims = VIMS(cname, root=cubes_dir)
                 cNs   = cvims.NS # To force downloading.
 
         # -------------------------------------------------------------------------------
@@ -110,11 +110,11 @@ class VIMS_u:
         #print(self.Pav_DF.head())
 
     # -----------------------------------------------------------------------------------
-    def extract_3x3box (self):
+    def extract_3x3box (self, cubes_dir=None):
         """
         Extraction of 3x3 pixels boxes data.
         """
-        list_smooth_err = np.empty((0,self.Nchan_VIMS), dtype=float)
+        list_smooth_err = np.empty((0, self.Nchan_VIMS), dtype=float)
 
         list_av_IF = np.array([])          # List of the average I/F, for each cube.
         list_av_Inc= np.array([])
@@ -212,7 +212,7 @@ class VIMS_u:
             toc_1 = time.perf_counter()
             cube_exec_time = np.append(cube_exec_time, toc_1 - tic_1)
 
-            #print ( ' > Cube ', nc,':', cubname, ':', cubname_fig, ':', cub_VIMS.NL,'x',cub_VIMS.NS, cub_av_incid, cub_avIF)
+            #print ( ' > Cube ', nc,':', cubname, ':', cubname_fig, ':', cub_VIMS.NL,'x', cub_VIMS.NS, cub_av_incid, cub_avIF)
             print ( '   - Cube ', nc,':', cubname, ':', cub_VIMS.NS * cub_VIMS.NL, ' px, ', f' processing performed in {toc_1 - tic_1:0.4f} seconds')
             Npx += 1
             #if nc == 2:
@@ -228,7 +228,7 @@ class VIMS_u:
         return self.Cubes_DF, self.Pav_DF
 
     # -----------------------------------------------------------------------------------
-    def cub_av_IF (self,cube):
+    def cub_av_IF (self, cube):
         """
            Compute the average I/F over the entire VIMS cube
            Parameters:
@@ -238,7 +238,7 @@ class VIMS_u:
         list_av_IF = np.array([])
         for ss in range(cube.NS):
             for ll in range(cube.NL):
-                spectre = cube[ss+1,ll+1].spectrum
+                spectre = cube[ss+1, ll+1].spectrum
                 av_IF   = np.mean(spectre)
                 #print (av_IF)
                 list_av_IF = np.append(list_av_IF, av_IF)

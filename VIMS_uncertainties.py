@@ -16,7 +16,6 @@ import sys
 import numpy as np
 
 # Pour pouvoir faire de belles figures :
-import matplotlib
 import matplotlib.pyplot as plt
 
 # On importer la classe 'VIMS' :
@@ -71,7 +70,7 @@ class VIMS_uncert(VIMS):
         return n_sample, n_line, n_util
 
     # --------------------------------------------------------------------------------
-    def choice_pix(self,frac,root='.'):
+    def choice_pix(self, frac, root='.'):
         """
         Random choise of pixels in the cube:
         > input:
@@ -100,15 +99,15 @@ class VIMS_uncert(VIMS):
         return ns_rand, nl_rand
 
     # --------------------------------------------------------------------------------
-    def plot_pix_distri(self,frac, root='.', plotdir= '.', figname='Untitled.png'):
+    def plot_pix_distri(self, frac, root='.', plotdir= '.', figname='Untitled.png'):
         """
         Plot, over the considered cube, of the randomly chosen pixels.
         > input:
             - frac: the fraction of useful pixels, must be positive and smaller than 1.
         """
-        ns_rand, nl_rand = self.choice_pix(frac,root)
+        ns_rand, nl_rand = self.choice_pix(frac, root)
 
-        fig, axes = plt.subplots(sharey=True,figsize=(12, 6))
+        fig, axes = plt.subplots(sharey=True, figsize=(12, 6))
         plt.rcParams.update({'figure.max_open_warning': 0})
 
         self.plot(2.03, ax=axes)
@@ -120,7 +119,7 @@ class VIMS_uncert(VIMS):
         fig.savefig(plotdir + figname)
 
     # --------------------------------------------------------------------------------
-    def comp_logect(self,frac,root='.'):
+    def comp_logect(self, frac, root='.'):
         """
         Détermination de l'écart-type relatif en fonction du canal VIMS, ceci pour la fraction 'frac'
         de pixels choisis.
@@ -141,15 +140,15 @@ class VIMS_uncert(VIMS):
                        # correspond à un pixel.
 
         # Construction des listes de coordonnées des pixels choisis :
-        ns_rand, nl_rand = self.choice_pix(frac,root)
+        ns_rand, nl_rand = self.choice_pix(frac, root)
         nb_pix = ns_rand.size
 
         for i in  range(nb_pix):
             s = ns_rand[i]
             l = nl_rand[i]
-            pixels = [ [s-1,l-1], [s,l-1], [s+1,l-1],
-                       [s-1,l  ], [s,l  ], [s+1,l],
-                       [s-1,l+1], [s,l+1], [s+1,l+1] ]
+            pixels = [ [s-1, l-1], [s, l-1], [s+1, l-1],
+                       [s-1, l  ], [s, l  ], [s+1, l],
+                       [s-1, l+1], [s, l+1], [s+1, l+1] ]
             # Boucle sur les canaux VIMS :
             log10_ectype_relat = np.array([])
             for can in range(nb_VIMS_channels):
@@ -183,7 +182,7 @@ class VIMS_uncert(VIMS):
         return nb_pix, cano, log10_ectype_relat_list, spl_func_list
 
     # --------------------------------------------------------------------------------
-    def plot_obs_ect(self,frac,root='.'):
+    def plot_obs_ect(self, frac, root='.'):
         """
         Plot _all_ observed relative standard deviation read in the considered VIMS cube, using
         a set of 9x9 pixels blocks.
@@ -197,13 +196,13 @@ class VIMS_uncert(VIMS):
             ax.scatter(cann, log10_ectype_relat_list[ipix])
 
     # --------------------------------------------------------------------------------
-    def plot_fitted_ect(self,frac):
+    def plot_fitted_ect(self, frac, root='.'):
         """
         Plot all fit corresponding to all 9x9 pixels blocks.
         > input:
             - frac: the fraction of useful pixels, must be positive and smaller than 1.
         """
-        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac,root)
+        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac, root)
         fig, ax = plt.subplots()
         plt.xlabel('VIMS channels')
         plt.ylabel('Fit law, one for each VIMS pixel')
@@ -213,7 +212,7 @@ class VIMS_uncert(VIMS):
             ax.plot(cann, spl(cann), lw=2)
 
     # --------------------------------------------------------------------------------
-    def det_smoothed_fit(self,frac,root='.'):
+    def det_smoothed_fit(self, frac, root='.'):
         """
         Reduce to set of nblock fitting function to only one (computing an average value
         for each VIMS channel)
@@ -223,7 +222,7 @@ class VIMS_uncert(VIMS):
             - cann: list of VIMS channels
             - smoothed_fit: the values of the final fit function.
         """
-        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac,root)
+        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac, root)
         # On construit la fonction de fit "moyenne", en moyennant pour chaque canal les valeurs
         # obtenues avec chaque fit :
         smoothed_fit= np.array([]) # Création d'un array 1D vide.
@@ -237,15 +236,15 @@ class VIMS_uncert(VIMS):
         return cann, smoothed_fit
 
     # --------------------------------------------------------------------------------
-    def plot_smoothFit_obs(self,frac,root='.'):
+    def plot_smoothFit_obs(self, frac, root='.'):
         """
         Plot the experimental relative standard deviation, plus the finale smoothed
         fitting function.
         > input:
             - frac: the fraction of useful pixels, must be positive and smaller than 1.
         """
-        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac,root)
-        cann, smoothed_fit= self.det_smoothed_fit(frac,root)
+        npix, cann, log10_ectype_relat_list, spl_func_list = self.comp_logect(frac, root)
+        cann, smoothed_fit= self.det_smoothed_fit(frac, root)
         fig, ax = plt.subplots()
         plt.xlabel('VIMS channels')
         for ipix in range(npix):
@@ -253,7 +252,7 @@ class VIMS_uncert(VIMS):
         ax.plot(cann, smoothed_fit, lw=2, color='r')
 
     # --------------------------------------------------------------------------------
-    def write_STDdevFit_output_file(self,frac,root='.'):
+    def write_STDdevFit_output_file(self, frac, root='.'):
         """
         For a given VIMS cube and a fraction of pixel involved in our analysis
         write a text file
@@ -263,18 +262,17 @@ class VIMS_uncert(VIMS):
         filename= 'VIMScubeUncert_'+filename+".out"
 
         # Affichage:
-        print(Fore.RED  + " > On écrit le fichier de sortie : ", end='')
-        print(Fore.BLUE + filename)
-        print(Style.RESET_ALL)
+        print(" > On écrit le fichier de sortie : ", end='')
+        print(filename)
 
         # Determination of the final smoothed fit function:
-        can, smoothed_fit= self.det_smoothed_fit(frac,root)
+        can, smoothed_fit= self.det_smoothed_fit(frac, root)
 
         # We write the output ASCII file (which will be read by the Ratiative Transfer FORTRAN program)
         fileout = open(filename, "w")
         fileout.write("# "+str(datetime_object)+"\n")
         for i in range(can.size):
-            fileout.write("%4d %16.8E \n" % (can[i]+1,smoothed_fit[i]) )
+            fileout.write("%4d %16.8E \n" % (can[i]+1, smoothed_fit[i]) )
         fileout.close()
 
     # --------------------------------------------------------------------------------
@@ -283,7 +281,7 @@ class VIMS_uncert(VIMS):
     # ================================================================================
     # 5 octobre 2020 : version qui pour un cube donné sort toutes les caractéristiques
     #                  de tous les pavés de 3x3 pixels.
-    def comp_logect_pave(self,frac,root='.'):
+    def comp_logect_pave(self, frac, root='.'):
         """
         Détermination de l'écart-type relatif en fonction du canal VIMS, ceci pour la fraction 'frac'
         de pixels choisis.
@@ -335,7 +333,7 @@ class VIMS_uncert(VIMS):
         # ----------------------------------------------------------
         # Construction des listes de coordonnées des pixels centraux (i.e. pixels aux centres des
         # pavés 3x3 tirés au sort dans le cube) choisis :
-        ns_rand, nl_rand = self.choice_pix(frac,root)
+        ns_rand, nl_rand = self.choice_pix(frac, root)
         nb_pix = ns_rand.size
 
         # ----------------------------------------------------------
@@ -347,9 +345,9 @@ class VIMS_uncert(VIMS):
         for i in  range(nb_pix):
             s = ns_rand[i]
             l = nl_rand[i]
-            myLat = self[s,l].lat # Planetocentric North latitude
-            myLon = self[s,l].lon # Planetocentric West longitude.
-            myRes = self[s,l].res # :
+            myLat = self[s, l].lat # Planetocentric North latitude
+            myLon = self[s, l].lon # Planetocentric West longitude.
+            myRes = self[s, l].res # :
             latC_pav = np.append(latC_pav, myLat)
             lonC_pav = np.append(lonC_pav, myLon)
             res_av   = np.append(res_av, myRes)
@@ -362,9 +360,9 @@ class VIMS_uncert(VIMS):
         for i in  range(nb_pix):
             s = ns_rand[i]
             l = nl_rand[i]
-            pixels = [ [s-1,l-1], [s,l-1], [s+1,l-1],
-                       [s-1,l  ], [s,l  ], [s+1,l],
-                       [s-1,l+1], [s,l+1], [s+1,l+1] ]
+            pixels = [ [s-1, l-1], [s, l-1], [s+1, l-1],
+                       [s-1, l  ], [s, l  ], [s+1, l],
+                       [s-1, l+1], [s, l+1], [s+1, l+1] ]
 
             # Boucle sur les canaux VIMS :
             log10_ectype_relat_temp = np.array([])
@@ -406,9 +404,9 @@ class VIMS_uncert(VIMS):
         for i in  range(nb_pix):
             s = ns_rand[i]
             l = nl_rand[i]
-            pixels = [ [s-1,l-1], [s,l-1], [s+1,l-1],
-                       [s-1,l  ], [s,l  ], [s+1,l],
-                       [s-1,l+1], [s,l+1], [s+1,l+1] ]
+            pixels = [ [s-1, l-1], [s, l-1], [s+1, l-1],
+                       [s-1, l  ], [s, l  ], [s+1, l],
+                       [s-1, l+1], [s, l+1], [s+1, l+1] ]
 
             inc_temp   = np.array([])
             eme_temp   = np.array([])
@@ -418,9 +416,9 @@ class VIMS_uncert(VIMS):
                 #print (pix)
                 sa = pix[0]
                 li = pix[1]
-                inc_temp   = np.append(inc_temp, self[sa,li].inc)
-                eme_temp   = np.append(eme_temp, self[sa,li].eme)
-                phase_temp = np.append(phase_temp, self[sa,li].phase)
+                inc_temp   = np.append(inc_temp, self[sa, li].inc)
+                eme_temp   = np.append(eme_temp, self[sa, li].eme)
+                phase_temp = np.append(phase_temp, self[sa, li].phase)
 
             ectr_inc   = np.append(ectr_inc, np.std(inc_temp)/np.mean(inc_temp))
             inc_av     = np.append(inc_av,   np.mean(inc_temp))
