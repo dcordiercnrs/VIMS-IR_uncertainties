@@ -1,5 +1,7 @@
 # Material for VIMS-IR uncertainties estimations
 
+[![Zenodo DOI (pending release)](https://zenodo.org/badge/575010317.svg)](https://zenodo.org/badge/latestdoi/575010317)
+
 ## About
 
 The material available here is a supplementary material related to the paper
