@@ -1,6 +1,7 @@
 # Material for VIMS-IR uncertainties estimations
 
 ## About
+
 The material available here is a supplementary material related to the paper
 **Photometric Uncertainties of Cassini VIMS-IR Instrument** submitted to _Icarus_ by
 [Cordier, D. ![orcid](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-4515-6271),
@@ -19,28 +20,22 @@ The main goal of this work is to estimate photometric uncertainties remaining in
 within each individual "block" or "box", for a given spectral channel, the variability of photometric quantities is computed.
 The mean relative variability gives an approximation of uncertainties.
 
-## Requirements
-Basically, the programs, we make publicly available, require a recent `Python` version (3.x) and the very commonly used packages:
- - `os`, `sys`
- - `Numpy`
- - `Matplotlib`
- - `Pandas`
- - `time`
- - `re`
- - `random`
- - `datetime`
- - `scipy`
- - `titan`
+## Setup
 
-together with the VIMS data management tool:
- - `PyVIMS` 
- 
-all these packages may be installed using the `pip` with command lines similar to `pip install pyvims`.
+The scripts present in this repository requires a recent `python` version (> 3.6).
+You can install the required dependency with the following steps:
 
-In addition, the provided Python modules `VIMSU_1.py`, `VIMSU_2.py` and `VIMS_uncertainties.py` should be available in the current
-directory.
+```bash
+python -m venv venv
+source venv/bin/activate
+
+python -m pip install -r requirements.txt
+```
+
+In addition, the provided Python modules `VIMSU_1.py`, `VIMSU_2.py` and `VIMS_uncertainties.py` should be available in the current directory.
 
 ## Data
+
  - `VIMSuncert_cubes_list.csv`: `CSV` file containing the full list of the 149 high spatial resolution VIMS cubes analyzed.
     These cubes have a spatial resolution better than 35km/pixel.
  - `VIMS_CALCUBES/`: the directory containing all the 149 calibrated cube involved in the study. Using the list in the
@@ -55,6 +50,7 @@ directory.
    can generate his/her own `HF5` file.
 
 ## Tools
+
 The global analysis process is split into 2 steps:
  1. the random choice of 3x3 boxes in the cubes and the record of extracted data, stored in Pandas *DataFrames*, in
     `HDF5` files. This step can be accomplished with the Python Jupyter notebook:
@@ -109,6 +105,6 @@ The global analysis process is split into 2 steps:
 
 ## License
 
-The source code is provided under a open-source [GPLv3 license](LICENSE.md).
-The input (`ANALYSYS_HDF5`) and output results (`fig/`) are distributed under a CC-BY-SA license.
-The `VIMS_CALCUBES` were downloaded on the [VIMS Data Portal](https://vims.univ-nantes.fr).
+The source codes in this repository (`*.py` and `*.ipynb`) are provided under a open-source [GPLv3 license](LICENSE.md).
+The output results (`ANALYSYS_HDF5/` and `fig/`) are distributed under a CC-BY-SA license.
+The `VIMS_CALCUBES/` were downloaded on the [VIMS Data Portal](https://vims.univ-nantes.fr).

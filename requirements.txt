@@ -1,0 +1,7 @@
+numpy
+matplotlib
+pandas
+scipy
+jupyterlab
+pyvims==1.0.3
+titan-moon==0.2.0
