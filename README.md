@@ -22,7 +22,7 @@ The mean relative variability gives an approximation of uncertainties.
 
 ## Setup
 
-The scripts present in this repository requires a recent `python` version (> 3.6).
+The scripts present in this repository requires a recent `python` version (≥ 3.7).
 You can install the required dependency with the following steps:
 
 ```bash
