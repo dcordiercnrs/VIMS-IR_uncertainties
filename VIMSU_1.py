@@ -160,7 +160,7 @@ class VIMS_u:
                 [T for T in detect_temp] + [T for T in instru_temp] + [T for T in opt_temp]
 
             Cubes_DF_temp = pd.DataFrame([ligne], columns=self.columns_Cubes)      # DataFrame temporaire d'une ligne.
-            self.Cubes_DF  = self.Cubes_DF.append(Cubes_DF_temp, ignore_index=True) # On ajoute le DataFrame tempo. au DataFrame final
+            self.Cubes_DF = pd.concat([self.Cubes_DF, Cubes_DF_temp], ignore_index=True) # On ajoute le DataFrame tempo. au DataFrame final
 
             # ---------------------------------------------------------------------------------
             # Construction du DataFrame concernant les données des paves :
@@ -191,7 +191,7 @@ class VIMS_u:
 
 
                 Pav_DF_temp = pd.DataFrame([ligne], columns=self.columns_Pav) # DataFrame temporaire d'une ligne.
-                self.Pav_DF = self.Pav_DF.append(Pav_DF_temp, ignore_index=True) # On ajoute le DataFrame tempo. au DataFrame final
+                self.Pav_DF = pd.concat([self.Pav_DF, Pav_DF_temp], ignore_index=True) # On ajoute le DataFrame tempo. au DataFrame final
 
             # Plot of chosen box (central pixel):
             cub_VIMS_uncert.plot_pix_distri(frac=self.frac_px, root=cubes_dir, \
