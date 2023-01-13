@@ -1,17 +1,15 @@
 # Material for VIMS-IR uncertainties estimations
 
 ## About
-The material available here is a supplementary material related to the paper 
-``*Photometric Uncertainties of Cassini VIMS-IR Instrument*'' by Cordier, D., Seignovert, B., Le Mouélic, S. and 
-Sotin, C.
+The material available here is a supplementary material related to the paper
+**Photometric Uncertainties of Cassini VIMS-IR Instrument** submitted to _Icarus_ by
+[Cordier, D. ![orcid](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-4515-6271),
+[Seignovert, B. ![orcid](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-6533-275X),
+[Le Mouélic, S. ![orcid](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-3947-1072) and
+[Sotin, C. ![orcid](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-3947-1072).
 
- - Daniel Cordier      https://orcid.org/0000-0003-4515-6271
- - Benoît Seignovert   https://orcid.org/0000-0001-6533-275X
- - Stéphane Le Mouélic https://orcid.org/0000-0001-5260-1367
- - Christophe Sotin    https://orcid.org/0000-0003-3947-1072
- 
 The main goal of this work is to estimate photometric uncertainties remaining in VIMS-IR cubes after calibration using
-USGS ISIS3 tool (https://isis.astrogeology.usgs.gov), the employed method relies on the definition of a collection of
+[USGS ISIS3 tool](https://isis.astrogeology.usgs.gov), the employed method relies on the definition of a collection of
 3x3 pixels picked-up in each considered cube as it is summarized in the following sketch:
 
 <center>
